@@ -30,7 +30,7 @@ jobs:
           images: ghcr.io/${{ github.repository }}
           tags: |
             latest
-            ${{env.BACKEND_VERSION }}
+            ${{ github.ref_name }}
       - name: Build and push Docker image
         id: push
         uses: docker/build-push-action@v6
